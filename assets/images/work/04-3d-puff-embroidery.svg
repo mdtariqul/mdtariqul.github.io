@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="3D puff embroidery sample">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe9f7"/><stop offset="1" stop-color="#ded2ee"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="600" cy="380" r="245" fill="#fdfbff" stroke="#d9cde8" stroke-width="2"/>
+  <circle cx="600" cy="380" r="228" fill="none" stroke="#a98d6a" stroke-width="14"/>
+  <circle cx="600" cy="380" r="212" fill="none" stroke="#6d28d9" stroke-width="2" stroke-dasharray="1 11" stroke-linecap="round" opacity=".45"/>
+  <g transform="translate(600 360)" font-family="Georgia, serif" font-size="150" font-weight="bold" text-anchor="middle" fill="#6d28d9">
+    <text y="20" fill="#4c1d95">3D</text>
+    <text y="130" font-size="90" letter-spacing="8" fill="#6d28d9">PUFF</text>
+  </g>
+  <text x="600" y="710" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#4c1d95">3D PUFF EMBROIDERY</text>
+  <text x="600" y="752" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" letter-spacing="4" fill="#8a7aa3">RAISED · BOLD · FOAM-BACKED</text>
+</svg>

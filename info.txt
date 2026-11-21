@@ -1,0 +1,26 @@
+H&N SENILE EMBROIDERY 
+Computerized Flat, Chenille & Sequin Embroidery
+0410
+Md. Hasan Ali
+Managing Director
+01926-040210 01631-260304
+hnemb1982@gmail.com
+hnsenileembroidery@gmail.com 
+House # 722, Road # 24 (Near) Sector # 10, Vatulia, Kamarpara Turag, Dhaka-1230.
+Co-ordinate : 23.895238, 90.384312 google-map.
+
+
+
+
+i want to build a company profilr website. Just introductory info. no backend process. as i need to host in free tire. you will find necessary info in info.txt  
+
+the requriment:
+1. auto scaleable for phone and desktop.
+2. theme switch button light and drak.
+3. a auto swaping photo galary. 
+4. google map location indicator.
+5. a section what type of embrodary the company can do.(currently add some random option)
+6. conact section.
+7. introduction part.
+
+at first read the info. create a plan. 

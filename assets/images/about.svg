@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Embroidery hoop with colourful thread work">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3e6e9"/><stop offset="1" stop-color="#e7d2d8"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#cf9152"/><stop offset="1" stop-color="#8a5123"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g opacity=".25" stroke="#9b1b3a" stroke-width="1">
+    <path d="M0 60 H800 M0 120 H800 M0 180 H800 M0 240 H800 M0 300 H800 M0 360 H800 M0 420 H800 M0 480 H800 M0 540 H800"/>
+  </g>
+  <circle cx="400" cy="300" r="220" fill="#fffaf8" stroke="#dfcbc6" stroke-width="2"/>
+  <circle cx="400" cy="300" r="205" fill="none" stroke="url(#wood)" stroke-width="20"/>
+  <circle cx="400" cy="300" r="205" fill="none" stroke="#6f3f1b" stroke-width="2" opacity=".3"/>
+  <circle cx="400" cy="300" r="192" fill="none" stroke="#9b1b3a" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round" opacity=".45"/>
+  <!-- decorative flower stitched -->
+  <g transform="translate(400 300)">
+    <g fill="none" stroke-width="11" stroke-linecap="round">
+      <path d="M0 -20 C40 -90 95 -60 70 -10" stroke="#9b1b3a"/>
+      <path d="M20 0 C90 40 60 95 10 70" stroke="#c9962f"/>
+      <path d="M0 20 C-40 90 -95 60 -70 10" stroke="#0f766e"/>
+      <path d="M-20 0 C-90 -40 -60 -95 -10 -70" stroke="#6d28d9"/>
+    </g>
+    <circle r="16" fill="#c9962f" stroke="#fff" stroke-width="3"/>
+    <circle r="6" fill="#fff"/>
+  </g>
+  <g fill="#9b1b3a" opacity=".8">
+    <path d="M95 130 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4 z"/>
+    <path d="M700 460 l4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4 z"/>
+  </g>
+</svg>

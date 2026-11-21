@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Embroidery hoop illustration">
+  <defs>
+    <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c98a4b"/><stop offset="1" stop-color="#8d5426"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf7"/><stop offset="1" stop-color="#f3e8e4"/>
+    </linearGradient>
+  </defs>
+  <circle cx="260" cy="260" r="215" fill="url(#cloth)" stroke="#e4d3cd" stroke-width="2"/>
+  <circle cx="260" cy="260" r="205" fill="none" stroke="#9b1b3a" stroke-width="3" stroke-dasharray="1 11" stroke-linecap="round" opacity=".5"/>
+  <circle cx="260" cy="260" r="185" fill="none" stroke="url(#wood)" stroke-width="18"/>
+  <circle cx="260" cy="260" r="185" fill="none" stroke="#6f3f1b" stroke-width="2" opacity=".35"/>
+  <circle cx="260" cy="260" r="200" fill="none" stroke="url(#wood)" stroke-width="10"/>
+  <!-- thread swirl -->
+  <path d="M160 300 C150 220 230 165 300 190 C370 215 350 300 285 315 C225 328 205 270 250 245 C290 223 330 250 320 285"
+        fill="none" stroke="#9b1b3a" stroke-width="10" stroke-linecap="round"/>
+  <path d="M162 302 C152 222 232 167 302 192 C372 217 352 302 287 317 C227 330 207 272 252 247 C292 225 332 252 322 287"
+        fill="none" stroke="#c9962f" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 8" opacity=".9"/>
+  <!-- little stitches -->
+  <g stroke="#9b1b3a" stroke-width="5" stroke-linecap="round" opacity=".75">
+    <path d="M120 200 l22 10"/><path d="M110 230 l23 6"/><path d="M115 262 l22 2"/>
+    <path d="M400 200 l-22 10"/><path d="M410 230 l-23 6"/><path d="M405 262 l-22 2"/>
+  </g>
+  <!-- needle -->
+  <g transform="rotate(35 370 130)">
+    <path d="M370 70 L370 190" stroke="#9aa3ad" stroke-width="5" stroke-linecap="round"/>
+    <path d="M370 70 l-5 14 h10 z" fill="#9aa3ad"/>
+    <ellipse cx="370" cy="182" rx="5" ry="9" fill="none" stroke="#9aa3ad" stroke-width="3"/>
+  </g>
+  <!-- sparkles -->
+  <g fill="#c9962f">
+    <path d="M78 120 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4 z"/>
+    <path d="M448 350 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3 z"/>
+  </g>
+</svg>
