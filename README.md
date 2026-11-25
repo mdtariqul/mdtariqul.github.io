@@ -8,12 +8,28 @@ Works with any free host (GitHub Pages, Netlify, Vercel, Cloudflare Pages).
 Photos live in two folders:
 
 ```
-assets/images/work/           ← completed embroidery work
-assets/images/environment/    ← studio inside/outside photos
+assets/images/Work Sample/    ← completed embroidery work
+assets/images/Environment/    ← studio inside/outside photos
 ```
+
+Name photos with a number prefix — `1.jpg`, `2.jpg`, `3.jpg` … — and they display in
+that exact order (`10` comes after `9`, not after `1`).
 
 **Just copy your photos into either folder.** The gallery reads a generated list from
 `assets/gallery-data.js`, so no HTML/JS edits are needed.
+
+### New photos: resize them first
+
+Large phone photos make the site slow. Before committing new photos, run once:
+
+```
+python build/optimize_images.py
+```
+
+It needs Pillow (`pip install Pillow`), resizes each new photo to a max of 1600 px
+and saves it as an optimized JPEG. Photos already optimized are skipped, so it is
+safe to run repeatedly. The untouched originals are copied to `_originals/`,
+which is git-ignored and never deployed.
 
 - **On GitHub Pages (automatic):** the included workflow
   `.github/workflows/deploy.yml` runs `node build/generate-gallery.js` on every push,
@@ -37,14 +53,16 @@ Suggested naming: `01-description.jpg`, `02-description.jpg`, ...
 ```
 index.html                   page content
 css/styles.css               layout, responsive rules, light/dark themes
-js/script.js                 theme toggle, mobile menu, galleries, contact form
+js/script.js                 theme toggle, mobile menu, galleries, reveal, form
 build/generate-gallery.js    scans folders and writes gallery-data.js
+build/optimize_images.py     resizes new photos, backs up originals
 assets/gallery-data.js       auto-generated photo list (do not edit)
 assets/favicon.svg           browser tab icon
 assets/images/hero.svg
-assets/images/about.svg
-assets/images/work/
-assets/images/environment/
+assets/images/home.jpg
+assets/images/Work Sample/
+assets/images/Environment/
+_originals/                  full-size backups (git-ignored, not deployed)
 .github/workflows/deploy.yml GitHub Pages build + deploy
 ```
 

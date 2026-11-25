@@ -1,8 +1,13 @@
 /* =========================================================
    Gallery manifest generator
    ---------------------------------------------------------
-   Scans assets/images/work and assets/images/environment and
-   writes assets/gallery-data.js.
+   Scans the two photo folders and writes assets/gallery-data.js:
+
+     assets/images/Work Sample/    -> work gallery
+     assets/images/Environment/    -> environment gallery
+
+   Photos are ordered by the number in their filename:
+   1.jpg, 2.jpg, 3.jpg ... 10.jpg, 11.jpg, and so on.
 
    Run it after adding photos:
        node build/generate-gallery.js
@@ -20,42 +25,56 @@ const root = path.resolve(__dirname, '..');
 const imageExt = /\.(jpe?g|png|webp|gif|svg|avif|bmp)$/i;
 
 const folders = [
-  { key: 'work', dir: 'assets/images/work' },
-  { key: 'environment', dir: 'assets/images/environment' }
+  { key: 'work',        dir: 'assets/images/Work Sample', label: 'Work sample' },
+  { key: 'environment', dir: 'assets/images/Environment', label: 'Environment photo' }
 ];
 
-/* Natural sort so 2 comes before 10. */
+/* Order by the leading number first: 1, 2 ... 9, 10, 11. */
+function leadingNumber(name) {
+  const match = name.match(/^(\d+)/);
+  return match ? Number(match[1]) : Infinity;
+}
+
 function naturalCompare(a, b) {
+  const na = leadingNumber(a);
+  const nb = leadingNumber(b);
+  if (na !== nb) return na - nb;
   return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
 }
 
-/* "03-sequin-embroidery.jpg" -> "Sequin embroidery" */
-function labelFrom(name) {
-  let label = name.replace(/\.[^.]+$/, '');
-  label = label.replace(/^\d+[\s._-]+/, '');
-  label = label.replace(/[-_]+/g, ' ').trim();
-  if (!label) label = name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ');
+/* "1.jpg" -> "Work sample 1"; "03-sequin.jpg" -> "Sequin". */
+function labelFrom(name, prefix) {
+  const base = name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim();
+  if (/^\d+$/.test(base)) return prefix + ' ' + base;
+  const label = base.replace(/^\d+\s+/, '') || (prefix + ' ' + base);
   return label.charAt(0).toUpperCase() + label.slice(1);
 }
 
-function collect(relDir) {
-  const absDir = path.join(root, relDir);
+/* Build a browser-safe relative URL (handles spaces in folder names). */
+function relativeUrl(relDir, file) {
+  return relDir.split('/').concat(file).map(encodeURIComponent).join('/');
+}
+
+function collect({ dir, label }) {
+  const absDir = path.join(root, dir);
   if (!fs.existsSync(absDir)) {
-    console.warn('[gallery] Folder not found, skipping:', relDir);
+    console.warn('[gallery] Folder not found, skipping: ' + dir);
     return [];
   }
   return fs.readdirSync(absDir)
     .filter(file => imageExt.test(file) && !file.startsWith('.'))
     .sort(naturalCompare)
     .map(file => {
-      const src = (relDir + '/' + file).replace(/\\/g, '/');
-      const label = labelFrom(file);
-      return { src, alt: label + ' — H&N Senile Embroidery' };
+      const caption = labelFrom(file, label);
+      return {
+        src: relativeUrl(dir, file),
+        alt: caption + ' — H&N Senile Embroidery'
+      };
     });
 }
 
 const data = {};
-folders.forEach(({ key, dir }) => { data[key] = collect(dir); });
+folders.forEach(folder => { data[folder.key] = collect(folder); });
 
 const output = path.join(root, 'assets', 'gallery-data.js');
 const contents =
@@ -64,7 +83,7 @@ const contents =
 
 fs.writeFileSync(output, contents, 'utf8');
 
-folders.forEach(({ key }) => {
-  console.log('[gallery] ' + key + ': ' + data[key].length + ' photo(s)');
+folders.forEach(folder => {
+  console.log('[gallery] ' + folder.key + ': ' + data[folder.key].length + ' photo(s)');
 });
 console.log('[gallery] Wrote ' + path.relative(root, output));

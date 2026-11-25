@@ -1,6 +1,6 @@
 /* =========================================================
    H&N Senile Embroidery — interactions
-   Theme toggle, mobile menu, auto gallery, mailto form
+   Theme toggle, mobile menu, galleries, scroll reveal, mailto form
    ========================================================= */
 (function () {
   'use strict';
@@ -53,11 +53,10 @@
     });
   }
 
-  /* ---------- Auto-swapping galleries ----------
+  /* ---------- Galleries: only buttons / dots change the photo ----------
      Photos come from assets/gallery-data.js, which is generated
-     from the files in assets/images/work and /environment.        */
+     from the "Work Sample" and "Environment" folders.              */
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var INTERVAL = 4500;
 
   function initGallery(slider, photos) {
     var track = slider.querySelector('.gallery-track');
@@ -73,11 +72,29 @@
       var slide = document.createElement('div');
       slide.className = 'slide' + (i === 0 ? ' active' : '');
       slide.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
+
+      /* The whole visible photo is a link, so opening in a new tab
+         always uses the photo that is actually on screen. */
+      var link = document.createElement('a');
+      link.className = 'gallery-image-link';
+      link.href = photo.src;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', 'Open ' + photo.alt + ' in a new tab');
+
       var img = document.createElement('img');
       img.src = photo.src;
       img.alt = photo.alt;
       if (i > 0) img.loading = 'lazy';
-      slide.appendChild(img);
+      link.appendChild(img);
+
+      var zoom = document.createElement('span');
+      zoom.className = 'gallery-zoom';
+      zoom.setAttribute('aria-hidden', 'true');
+      zoom.textContent = 'View full size ↗';
+      link.appendChild(zoom);
+
+      slide.appendChild(link);
       track.appendChild(slide);
     });
 
@@ -91,14 +108,13 @@
 
     var dots = [];
     var current = 0;
-    var timer = null;
 
     slides.forEach(function (_, i) {
       var dot = document.createElement('button');
       dot.type = 'button';
       dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-label', 'Show image ' + (i + 1));
-      dot.addEventListener('click', function () { show(i); restart(); });
+      dot.addEventListener('click', function () { show(i); });
       dotsBox.appendChild(dot);
       dots.push(dot);
     });
@@ -109,6 +125,10 @@
         var active = i === current;
         slide.classList.toggle('active', active);
         slide.setAttribute('aria-hidden', String(!active));
+        /* Hidden slides must not catch clicks or keyboard focus. */
+        slide.inert = !active;
+        var link = slide.querySelector('.gallery-image-link');
+        if (link) link.tabIndex = active ? 0 : -1;
       });
       dots.forEach(function (dot, i) {
         var active = i === current;
@@ -117,35 +137,10 @@
       });
     }
 
-    function start() {
-      if (reduceMotion.matches || slides.length < 2) return;
-      timer = window.setInterval(function () { show(current + 1); }, INTERVAL);
-    }
-
-    function stop() {
-      if (timer) { window.clearInterval(timer); timer = null; }
-    }
-
-    function restart() { stop(); start(); }
-
-    if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); restart(); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); restart(); });
-
-    slider.addEventListener('mouseenter', stop);
-    slider.addEventListener('mouseleave', start);
-    slider.addEventListener('focusin', stop);
-    slider.addEventListener('focusout', start);
-
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) stop(); else start();
-    });
-
-    if (reduceMotion.addEventListener) {
-      reduceMotion.addEventListener('change', restart);
-    }
+    if (prevBtn) prevBtn.addEventListener('click', function () { show(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1); });
 
     show(0);
-    start();
   }
 
   var galleryData = window.HNS_GALLERY || {};
@@ -153,6 +148,27 @@
     var key = slider.getAttribute('data-gallery');
     initGallery(slider, galleryData[key] || []);
   });
+
+  /* ---------- Reveal each item once, the first time it scrolls into view ---------- */
+  var revealItems = document.querySelectorAll('.reveal');
+  if (revealItems.length) {
+    Array.prototype.forEach.call(revealItems, function (el, i) {
+      el.classList.add(i % 2 === 0 ? 'reveal-left' : 'reveal-right');
+    });
+
+    if (!('IntersectionObserver' in window) || reduceMotion.matches) {
+      Array.prototype.forEach.call(revealItems, function (el) { el.classList.add('is-visible'); });
+    } else {
+      var revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); /* animate only once */
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+      Array.prototype.forEach.call(revealItems, function (el) { revealObserver.observe(el); });
+    }
+  }
 
   /* ---------- Mailto contact form (no backend) ---------- */
   var form = document.getElementById('contactForm');

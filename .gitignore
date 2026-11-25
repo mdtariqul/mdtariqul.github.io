@@ -1,0 +1,6 @@
+# Full-size photo backups (kept locally, never pushed to GitHub or deployed)
+_originals/
+_original/
+
+# Temporary files from the image optimizer
+*.optimized-tmp.jpg

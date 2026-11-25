@@ -2,42 +2,158 @@
 window.HNS_GALLERY = {
   "work": [
     {
-      "src": "assets/images/work/01-flat-embroidery.svg",
-      "alt": "Flat embroidery — H&N Senile Embroidery"
+      "src": "assets/images/Work%20Sample/1.jpg",
+      "alt": "Work sample 1 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/work/02-chenille-embroidery.svg",
-      "alt": "Chenille embroidery — H&N Senile Embroidery"
+      "src": "assets/images/Work%20Sample/2.jpg",
+      "alt": "Work sample 2 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/work/03-sequin-embroidery.svg",
-      "alt": "Sequin embroidery — H&N Senile Embroidery"
+      "src": "assets/images/Work%20Sample/3.jpg",
+      "alt": "Work sample 3 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/work/04-3d-puff-embroidery.svg",
-      "alt": "3d puff embroidery — H&N Senile Embroidery"
+      "src": "assets/images/Work%20Sample/4.jpg",
+      "alt": "Work sample 4 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/work/05-applique-work.svg",
-      "alt": "Applique work — H&N Senile Embroidery"
+      "src": "assets/images/Work%20Sample/5.jpg",
+      "alt": "Work sample 5 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/6.jpg",
+      "alt": "Work sample 6 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/7.jpg",
+      "alt": "Work sample 7 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/8.jpg",
+      "alt": "Work sample 8 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/9.jpg",
+      "alt": "Work sample 9 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/10.jpg",
+      "alt": "Work sample 10 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/11.jpg",
+      "alt": "Work sample 11 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/12.jpg",
+      "alt": "Work sample 12 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/13.jpg",
+      "alt": "Work sample 13 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Work%20Sample/14.jpg",
+      "alt": "Work sample 14 — H&N Senile Embroidery"
     }
   ],
   "environment": [
     {
-      "src": "assets/images/environment/01-outside-studio.svg",
-      "alt": "Outside studio — H&N Senile Embroidery"
+      "src": "assets/images/Environment/1.jpg",
+      "alt": "Environment photo 1 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/environment/02-workshop-interior.svg",
-      "alt": "Workshop interior — H&N Senile Embroidery"
+      "src": "assets/images/Environment/2.jpg",
+      "alt": "Environment photo 2 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/environment/03-machines-at-work.svg",
-      "alt": "Machines at work — H&N Senile Embroidery"
+      "src": "assets/images/Environment/3.jpg",
+      "alt": "Environment photo 3 — H&N Senile Embroidery"
     },
     {
-      "src": "assets/images/environment/04-thread-storage.svg",
-      "alt": "Thread storage — H&N Senile Embroidery"
+      "src": "assets/images/Environment/4.jpg",
+      "alt": "Environment photo 4 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/5.jpg",
+      "alt": "Environment photo 5 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/6.jpg",
+      "alt": "Environment photo 6 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/7.jpg",
+      "alt": "Environment photo 7 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/8.jpg",
+      "alt": "Environment photo 8 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/9.jpg",
+      "alt": "Environment photo 9 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/10.jpg",
+      "alt": "Environment photo 10 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/11.jpg",
+      "alt": "Environment photo 11 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/12.jpg",
+      "alt": "Environment photo 12 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/13.jpg",
+      "alt": "Environment photo 13 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/14.jpg",
+      "alt": "Environment photo 14 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/15.jpg",
+      "alt": "Environment photo 15 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/16.jpg",
+      "alt": "Environment photo 16 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/17.jpg",
+      "alt": "Environment photo 17 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/18.jpg",
+      "alt": "Environment photo 18 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/19.jpg",
+      "alt": "Environment photo 19 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/20.jpg",
+      "alt": "Environment photo 20 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/21.jpg",
+      "alt": "Environment photo 21 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/22.jpg",
+      "alt": "Environment photo 22 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/23.jpg",
+      "alt": "Environment photo 23 — H&N Senile Embroidery"
+    },
+    {
+      "src": "assets/images/Environment/24.jpg",
+      "alt": "Environment photo 24 — H&N Senile Embroidery"
     }
   ]
 };

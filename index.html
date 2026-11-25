@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script>
     /* Set the saved theme before the page paints to avoid a flash. */
+    document.documentElement.classList.add('js');
     (function () {
       try {
         var saved = localStorage.getItem('hns-theme');
@@ -59,7 +60,7 @@
     <!-- ===== Hero / Introduction ===== -->
     <section class="hero" id="home">
       <div class="container hero-inner">
-        <div class="hero-content">
+        <div class="hero-content reveal">
           <p class="eyebrow">Est. 2019 &nbsp;·&nbsp; Turag, Dhaka, Bangladesh</p>
           <h1>H&amp;N <span>Senile</span><br />Embroidery</h1>
           <p class="tagline">Computerized Flat, Chenille &amp; Sequin Embroidery</p>
@@ -69,7 +70,7 @@
             <a class="btn btn-outline" href="#contact">Get in Touch</a>
           </div>
         </div>
-        <div class="hero-art" aria-hidden="true">
+        <div class="hero-art reveal" aria-hidden="true">
           <img src="assets/images/hero.svg" alt="" />
         </div>
       </div>
@@ -78,11 +79,11 @@
     <!-- ===== About ===== -->
     <section class="section" id="about">
       <div class="container about-grid">
-        <div class="about-visual">
-          <img src="assets/images/about.svg" alt="An embroidery hoop with colourful thread work" loading="lazy" />
+        <div class="about-visual reveal">
+          <img src="assets/images/home.jpg" alt="An embroidery hoop with colourful thread work" loading="lazy" />
           <div class="about-badge"><strong id="yearsExp">7+</strong><span>Years of craft</span></div>
         </div>
-        <div class="about-content">
+        <div class="about-content reveal">
           <p class="section-label">About Us</p>
           <h2>Thread by thread, built on trust.</h2>
           <p>H&amp;N Senile Embroidery is a Dhaka-based embroidery studio led by Managing Director Md. Hasan Ali. Since our beginnings, we have specialised in computerized embroidery that combines traditional craftsmanship with modern machine precision.</p>
@@ -92,6 +93,7 @@
             <div><span>Managing Director</span><strong>Md. Hasan Ali</strong></div>
             <div><span>Core Services</span><strong>Flat · Chenille · Sequin</strong></div>
           </div>
+          <a class="btn btn-outline about-license" href="https://erevenue.dncc.gov.bd/Tradelicense/rpt_TradeLicense_tinyurl_print.aspx?id=29158fd1-c13d-4ac3-bc31-b4824700ec13&amp;printtype=dwaRpcdzXN8ksZBGu3vFcQ%3D%3D&amp;transactionno=AUSdBGuWevif1p0CHTEP8o6pOKZsyRU5Hru5dxqy%2FyE%3D" target="_blank" rel="noopener noreferrer">📄 View Trade License</a>
         </div>
       </div>
     </section>
@@ -99,14 +101,14 @@
     <!-- ===== Gallery ===== -->
     <section class="section section-tint" id="gallery">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="section-label">Gallery</p>
           <h2>Our work &amp; our space</h2>
           <p>Take a look at what we have made and where we make it.</p>
         </div>
 
         <!-- Gallery 1: previous work -->
-        <div class="gallery-group">
+        <div class="gallery-group reveal">
           <h3 class="gallery-title"><span>01</span> Work We've Done</h3>
           <div class="gallery" id="galleryWork" data-gallery="work" aria-roledescription="carousel" aria-label="Previously completed embroidery work">
             <div class="gallery-track"></div>
@@ -117,7 +119,7 @@
         </div>
 
         <!-- Gallery 2: company environment -->
-        <div class="gallery-group">
+        <div class="gallery-group reveal">
           <h3 class="gallery-title"><span>02</span> Our Environment</h3>
           <div class="gallery" id="galleryEnv" data-gallery="environment" aria-roledescription="carousel" aria-label="Company environment — inside and outside">
             <div class="gallery-track"></div>
@@ -126,28 +128,26 @@
             <div class="gallery-dots" role="tablist" aria-label="Choose image"></div>
           </div>
         </div>
-
-        <p class="gallery-hint">To add photos, drop them into <code>assets/images/work/</code> or <code>assets/images/environment/</code> and push — the galleries update automatically.</p>
       </div>
     </section>
 
     <!-- ===== Services ===== -->
     <section class="section" id="services">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="section-label">What We Do</p>
           <h2>Types of embroidery we can do</h2>
           <p>From classic flat stitching to textured and decorative finishes.</p>
         </div>
         <div class="cards-grid">
-          <article class="card"><div class="card-icon">🧵</div><h3>Flat Embroidery</h3><p>Clean, precise stitching for logos, names and graphics on fabric.</p></article>
-          <article class="card"><div class="card-icon">〰️</div><h3>Chenille Embroidery</h3><p>Soft, raised, velvet-like texture ideal for letters and patches.</p></article>
-          <article class="card"><div class="card-icon">✨</div><h3>Sequin Embroidery</h3><p>Shimmering sequin work that adds sparkle and dimension to any design.</p></article>
-          <article class="card"><div class="card-icon">🎚️</div><h3>3D Puff Embroidery</h3><p>Foam-backed stitching that lifts designs off the fabric.</p></article>
-          <article class="card"><div class="card-icon">🧩</div><h3>Appliqué Work</h3><p>Fabric pieces layered and stitched down for a bold, textured look.</p></article>
-          <article class="card"><div class="card-icon">🔤</div><h3>Monograms</h3><p>Personalised initials and lettering for a refined, classic finish.</p></article>
-          <article class="card"><div class="card-icon">🛡️</div><h3>Patches &amp; Badges</h3><p>Custom embroidered patches for uniforms, teams and brands.</p></article>
-          <article class="card"><div class="card-icon">🌟</div><h3>Metallic Thread</h3><p>Glossy metallic threads for accents that catch the light.</p></article>
+          <article class="card reveal"><div class="card-icon">🧵</div><h3>Flat Embroidery</h3><p>Clean, precise stitching for logos, names and graphics on fabric.</p></article>
+          <article class="card reveal"><div class="card-icon">〰️</div><h3>Chenille Embroidery</h3><p>Soft, raised, velvet-like texture ideal for letters and patches.</p></article>
+          <article class="card reveal"><div class="card-icon">✨</div><h3>Sequin Embroidery</h3><p>Shimmering sequin work that adds sparkle and dimension to any design.</p></article>
+          <article class="card reveal"><div class="card-icon">🎚️</div><h3>3D Puff Embroidery</h3><p>Foam-backed stitching that lifts designs off the fabric.</p></article>
+          <article class="card reveal"><div class="card-icon">🧩</div><h3>Appliqué Work</h3><p>Fabric pieces layered and stitched down for a bold, textured look.</p></article>
+          <article class="card reveal"><div class="card-icon">🔤</div><h3>Monograms</h3><p>Personalised initials and lettering for a refined, classic finish.</p></article>
+          <article class="card reveal"><div class="card-icon">🛡️</div><h3>Patches &amp; Badges</h3><p>Custom embroidered patches for uniforms, teams and brands.</p></article>
+          <article class="card reveal"><div class="card-icon">🌟</div><h3>Metallic Thread</h3><p>Glossy metallic threads for accents that catch the light.</p></article>
         </div>
       </div>
     </section>
@@ -155,17 +155,16 @@
     <!-- ===== Location ===== -->
     <section class="section section-tint" id="location">
       <div class="container location-grid">
-        <div class="location-info">
+        <div class="location-info reveal">
           <p class="section-label">Find Us</p>
           <h2>Visit our studio</h2>
           <p>You'll find us in Vatulia, Kamarpara Turag, Dhaka. Drop by or get in touch before visiting.</p>
           <ul class="info-list">
-            <li><span class="info-icon">📍</span><div><strong>Address</strong><span>House # 722, Road # 24 (Near) Sector # 10, Vatulia, Kamarpara Turag, Dhaka-1230.</span></div></li>
-            <li><span class="info-icon">🧭</span><div><strong>Coordinates</strong><span>23.895238, 90.384312</span></div></li>
+            <li><span class="info-icon">📍</span><div><strong>Address</strong><span>House # 722, Road # 24 Sector # 10, Uttara, Vatulia, Kamarpara Turag, Dhaka-1230.</span></div></li>
           </ul>
           <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=23.895238,90.384312" target="_blank" rel="noopener noreferrer">Get Directions</a>
         </div>
-        <div class="map-wrap">
+        <div class="map-wrap reveal">
           <iframe title="Map showing H&N Senile Embroidery in Dhaka" src="https://www.google.com/maps?q=23.895238,90.384312&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
@@ -174,7 +173,7 @@
     <!-- ===== Contact ===== -->
     <section class="section" id="contact">
       <div class="container contact-grid">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <p class="section-label">Contact</p>
           <h2>Let's talk about your project</h2>
           <p>Have a design in mind? Reach out and we'll help bring it to life.</p>
@@ -184,7 +183,7 @@
             <li><span class="info-icon">✉️</span><div><strong>Email</strong><span><a href="mailto:hnemb1982@gmail.com">hnemb1982@gmail.com</a><br /><a href="mailto:hnsenileembroidery@gmail.com">hnsenileembroidery@gmail.com</a></span></div></li>
           </ul>
         </div>
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form reveal" id="contactForm">
           <div class="form-row">
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" placeholder="Md. Hasan Ali" required />
@@ -202,7 +201,6 @@
             <textarea id="message" name="message" rows="5" placeholder="Tell us about your design, quantity and timeline..." required></textarea>
           </div>
           <button class="btn btn-primary btn-block" type="submit">Send Message</button>
-          <p class="form-note">This form opens your email app with the message ready to send — nothing is stored on this website.</p>
         </form>
       </div>
     </section>
@@ -210,7 +208,7 @@
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container footer-inner reveal">
       <div class="footer-brand">
         <p>&copy; <span id="year"></span> H&amp;N Senile Embroidery. All rights reserved.</p>
         <p class="footer-note">Computerized Flat, Chenille &amp; Sequin Embroidery · Dhaka, Bangladesh</p>
